@@ -25,13 +25,13 @@ done
 
 echo "The third question is ${StringArray[$thirdquestion]}"
 
-filename="src/index.php"
+filename="index.php"
 
 # Take the search string
-search1="question1"
-search2="question2"
-search3="question3"
+search1="random_question_1"
+search2="random_question_2"
+search3="random_question_3"
 
-sed -i "s/$search1/${StringArray[$firstquestion - 1]}/" $filename
-sed -i "s/$search2/${StringArray[$secondquestion - 1]}/" $filename
-sed -i "s/$search3/${StringArray[$thirdquestion - 1]}/" $filename
+sed -i "s/$search1/${StringArray[$firstquestion]}/" $filename
+sed -i "s/$search2/${StringArray[$secondquestion]}/" $filename
+sed -i "s/$search3/${StringArray[$thirdquestion]}/" $filename
