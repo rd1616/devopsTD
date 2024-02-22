@@ -21,4 +21,5 @@ jobs:
           context: .
           file: ./Dockerfile
           push: true
-          tags: ${{ secrets.DOCKER_USERNAME }}/{devopsTD}:{rauldaramus}
+          tags: ${{ secrets.DOCKER_USERNAME }}/devopsTD:latest
+
