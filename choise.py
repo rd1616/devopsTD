@@ -45,32 +45,30 @@ words = [
     "42",
 ]
 
-
-firstquestion = random.randint(0,5)
+firstquestion = random.randint(0, len(words)-1)
 secondquestion = firstquestion
 
 while secondquestion == firstquestion:
-  secondquestion = random.randint(0,5)
+    secondquestion = random.randint(0, len(words)-1)
 
 thirdquestion = firstquestion
 
 while thirdquestion == firstquestion or thirdquestion == secondquestion:
-  thirdquestion = random.randint(0,5)
+    thirdquestion = random.randint(0, len(words)-1)
 
-print("Firstquestion :")
+print("First question:")
 print(words[firstquestion])
-print("Secondquestion :")
+print("Second question:")
 print(words[secondquestion])
-print("Thirdquestion :")
+print("Third question:")
 print(words[thirdquestion])
 
-#input file
-fin = open("data.txt", "rt")
-#output file to write the result to
-fout = open("index.php", "wt")
-#for each line in the input file
-for line in fin:
-    fout.write(line.replace('question1', words[firstquestion]).replace('question2', words[secondquestion]).replace('question3', words[thirdquestion]))
-#close input and output files
-fin.close()
-fout.close()
+# Input file
+with open("data.txt", "rt") as fin:
+    data = fin.read()
+
+# Output file to write the result to
+with open("index.php", "wt") as fout:
+    fout.write(data.replace('question1', words[firstquestion])
+                   .replace('question2', words[secondquestion])
+                   .replace('question3', words[thirdquestion]))
