@@ -1,3 +1,4 @@
+
 import random
 
 words = [
@@ -45,16 +46,16 @@ words = [
     "42",
 ]
 
-firstquestion = random.randint(0, len(words)-1)
+firstquestion = random.randint(0, len(words) - 1)
 secondquestion = firstquestion
 
 while secondquestion == firstquestion:
-    secondquestion = random.randint(0, len(words)-1)
+    secondquestion = random.randint(0, len(words) - 1)
 
 thirdquestion = firstquestion
 
 while thirdquestion == firstquestion or thirdquestion == secondquestion:
-    thirdquestion = random.randint(0, len(words)-1)
+    thirdquestion = random.randint(0, len(words) - 1)
 
 print("First question:")
 print(words[firstquestion])
@@ -69,6 +70,8 @@ with open("data.txt", "rt") as fin:
 
 # Output file to write the result to
 with open("index.php", "wt") as fout:
-    fout.write(data.replace('question1', words[firstquestion])
-                   .replace('question2', words[secondquestion])
-                   .replace('question3', words[thirdquestion]))
+    fout.write(
+        data.replace('question1', words[firstquestion])
+            .replace('question2', words[secondquestion])
+            .replace('question3', words[thirdquestion])
+    )
