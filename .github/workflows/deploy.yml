@@ -44,9 +44,9 @@ jobs:
       - name: Set up Docker Environment
         run: |
           echo "Pulling the Docker image..."
-          docker pull ${DOCKER_USERNAME}/devopstdtest:lastest
+          docker pull ${{ secrets.DOCKER_USERNAME }}/devopstdtest:lastest
       - name: Deploy Container
         run: |
           echo "Deploying to Docker..."
-          docker run -d -p 80:80 ${DOCKER_USERNAME}/devopstdtest:lastest
+          docker run -d -p 80:80 ${{ secrets.DOCKER_USERNAME }}/devopstdtest:lastest
         
